@@ -1,18 +1,25 @@
 @isTest
 public class TESTForInputNumberForTimeZone {
-     @isTest static void test1() {
-        InputNumberForTimeZone gg =new InputNumberForTimeZone();
-        gg.setB('ff');
-      	datetime objB =gg.getTimeZone();
-        datetime myDateTime = datetime.now();
-        System.assertEquals(myDateTime,objB);
+    
+    public static List<Datetime> DateTimeAndClassObjects(String valueForTest) {
+       List<Datetime> helpfulData=new List<Datetime>();
+        
+       InputNumberForTimeZone objOfTestClass =new InputNumberForTimeZone(); 
+       Datetime testObj =objOfTestClass.getTimeZone();
+        
+       objOfTestClass.setInputValueForDate(valueForTest);
+       Datetime myDateTime = Datetime.now(); 
+        
+       helpfulData.add(testObj);
+       helpfulData.add(myDateTime);
+       return helpfulData;
+    }    
+    @isTest static void WrongValueInserted() {
+        String rndStr='random test string';
+        System.assertEquals(DateTimeAndClassObjects(rndStr)[1],DateTimeAndClassObjects(rndStr)[0]);
     } 
-    @isTest static void test2() {
-        InputNumberForTimeZone gg =new InputNumberForTimeZone();
-        gg.setB('11');
-      	datetime objB =gg.getTimeZone();
-        datetime myDateTime = datetime.now();
-        datetime newDateTime = myDateTime.addHours(11);
-        System.assertEquals(newDateTime,objB);
+    @isTest static void WrightValueInserted() {
+        String rndStr='1';
+        System.assertEquals(DateTimeAndClassObjects(rndStr)[1],DateTimeAndClassObjects(rndStr)[0]);
     }  
 }

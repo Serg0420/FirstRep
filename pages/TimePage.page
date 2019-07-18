@@ -1,4 +1,4 @@
-<apex:page controller="InputNumberForTimeZone"  >
+<apex:page controller="InputNumberForTimeZone">
  <apex:form >
 		<apex:pageBlock title="Time Zone Calculator">
         	<apex:pageBlockTable value="{! TimeZone }" var="time">
@@ -6,6 +6,6 @@
             	<apex:column value="{! MSG}"/>
         	</apex:pageBlockTable>
 		</apex:pageBlock> 
-   		<apex:inputText value="{! addctl.B}" />
+   		<apex:inputText value="{! addctl.InputValueForDate}" />
  </apex:form>
 </apex:page>
