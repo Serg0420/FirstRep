@@ -3,8 +3,8 @@
 		<apex:pageBlock title="Time Zone Calculator">
 			<apex:pageBlockTable value="{! TimeZone }" var="time">
 				<apex:column value="{! time}"/>
-            	<apex:column value="{! MSG}"/>
-        	</apex:pageBlockTable>
+            			<apex:column value="{! MSG}"/>
+        		</apex:pageBlockTable>
 		</apex:pageBlock> 
    		<apex:inputText value="{! objOfInputNumber.InputValueForDate}" />
 	</apex:form>
