@@ -5,6 +5,7 @@ global class SchedulerForCustomSettings implements Schedulable {
     global void execute(SchedulableContext ctx) {
         insert sendingElement;
     }
+    
     public static void ObjectToInsert(String sch, Custom_Setting__c sendingList, Integer indexOfSendingSetting){
         SchedulerForCustomSettings reminder = new SchedulerForCustomSettings();
         sendingElement=sendingList;
